@@ -19,4 +19,5 @@ public class TextProcessor {
         StringBuilder reversed = new StringBuilder(trimmed).reverse();
         return reversed.toString().toUpperCase();
     }
+    // Final
 }
