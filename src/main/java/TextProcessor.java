@@ -20,4 +20,6 @@ public class TextProcessor {
         return reversed.toString().toUpperCase();
     }
     // Final
+    // trigger pipeline
+
 }
