@@ -11,23 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout del código
-      uses: actions/checkout@v3
+      - name: Checkout del código
+        uses: actions/checkout@v3
 
-    - name: Configurar Java 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      - name: Configurar Java 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-    - name: Compilar y ejecutar tests con Maven
-      run: mvn -B clean test
+      - name: Compilar y ejecutar tests con Maven
+        run: mvn -B clean test
 
-    - name: Generar reporte JaCoCo
-      run: mvn jacoco:report
+      - name: Generar reporte JaCoCo
+        run: mvn jacoco:report
 
-    - name: Guardar reporte JaCoCo como artefacto
-      uses: actions/upload-artifact@v3
-      with:
-        name: jacoco-report
-        path: target/site/jacoco
+      - name: Guardar reporte JaCoCo como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: target/site/jacoco
